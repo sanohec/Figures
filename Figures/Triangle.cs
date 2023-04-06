@@ -20,7 +20,6 @@ namespace Figures
             Angle = an;
         }
 
-
         public double A
         {
             get
@@ -98,6 +97,5 @@ namespace Figures
         {
             _sideC = Math.Sqrt(Math.Pow(_sideB, 2) + Math.Pow(_sideA, 2) - 2 * _sideB * _sideA * Math.Cos(_angle));
         }
-
     }
 }
