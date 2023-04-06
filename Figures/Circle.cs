@@ -8,7 +8,7 @@ namespace Figures
 {
     class Circle : IFigure
     {
-        private double radius;
+        private double _radius;
 
         public Circle(double r)
         {
@@ -19,7 +19,7 @@ namespace Figures
         {
             get
             {
-                return radius;
+                return _radius;
             }
 
             set
@@ -28,19 +28,19 @@ namespace Figures
                 {
                     throw new ArgumentException("Радиус круга не может быть меньше или равен 0", nameof(value));
                 }
-                radius = value;
+                _radius = value;
             }
         }
 
         public double CalculatePerimeter()
         {
-            double l = (2 * Math.PI * radius);
+            double l = (2 * Math.PI * _radius);
             return l;
         }
 
         public double CalculateArea()
         {
-            double s = Math.PI * Math.Pow(radius, 2);
+            double s = Math.PI * Math.Pow(_radius, 2);
             return s;
         }
     }

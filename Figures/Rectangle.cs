@@ -8,8 +8,8 @@ namespace Figures
 {
     class Rectangle : IFigure
     {
-        private double sideA;
-        private double sideB;
+        private double _sideA;
+        private double _sideB;
 
         public Rectangle(double a, double b)
         {
@@ -21,7 +21,7 @@ namespace Figures
         {
             get
             {
-                return sideA;
+                return _sideA;
             }
             set
             {
@@ -30,7 +30,7 @@ namespace Figures
                     throw new ArgumentException("Сторона прямоугольника не может быть меньше 0", nameof(value));
                 }
 
-                sideA = value;
+                _sideA = value;
             }
         }
 
@@ -38,7 +38,7 @@ namespace Figures
         {
             get
             {
-                return sideB;
+                return _sideB;
             }
             set
             {
@@ -47,19 +47,19 @@ namespace Figures
                     throw new ArgumentException("Сторона прямоугольника не может быть меньше 0", nameof(value));
                 }
 
-                sideB = value;
+                _sideB = value;
             }
         }
 
         public double CalculatePerimeter()
         {
-            double p = (sideA + sideB) * 2;
+            double p = (_sideA + _sideB) * 2;
             return p;
         }
 
         public double CalculateArea()
         {
-            double area = sideA * sideB;
+            double area = _sideA * _sideB;
             return area;
         }
     }
