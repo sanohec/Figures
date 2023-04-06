@@ -99,9 +99,5 @@ namespace Figures
             _sideC = Math.Sqrt(Math.Pow(_sideB, 2) + Math.Pow(_sideA, 2) - 2 * _sideB * _sideA * Math.Cos(_angle));
         }
 
-        public bool IsRightTriangle()
-        {
-            return (_sideA * _sideA + _sideB * _sideB == _sideC * _sideC || _sideA * _sideA + _sideC * _sideC == _sideB * _sideB ||_sideB * _sideB + _sideC * _sideC == _sideA * _sideA);                    
-        }
     }
 }
