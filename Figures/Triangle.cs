@@ -8,10 +8,10 @@ namespace Figures
 {
     class Triangle : IFigure
     {
-        private double sideA;
-        private double sideB;
-        private double sideC;
-        private int angle;
+        private double _sideA;
+        private double _sideB;
+        private double _sideC;
+        private int _angle;
 
         public Triangle(double a, double b, int an)
         {
@@ -25,7 +25,7 @@ namespace Figures
         {
             get
             {
-                return sideA;
+                return _sideA;
             }
             set
             {
@@ -34,7 +34,7 @@ namespace Figures
                     throw new ArgumentException("Сторона треугольника не может быть меньше или равена 0", nameof(value));
                 }
 
-                sideA = value;
+                _sideA = value;
             }
         }
 
@@ -42,7 +42,7 @@ namespace Figures
         {
             get
             {
-                return sideB;
+                return _sideB;
             }
 
             set
@@ -52,7 +52,7 @@ namespace Figures
                     throw new ArgumentException("Сторона треугольника не может быть меньше или равен 0", nameof(value));
                 }
 
-                sideB = value;
+                _sideB = value;
             }
         }
 
@@ -60,7 +60,7 @@ namespace Figures
         {
             get
             {
-                return sideC;
+                return _sideC;
             }
         }
 
@@ -68,40 +68,40 @@ namespace Figures
         {
             get
             {
-                return angle;
+                return _angle;
             }
             set
             {
-                if (value <= 0)
+                if (value <= 0 || value >= 180) 
                 {
-                    throw new ArgumentException("Угол между двумя сторонами треугольника не может быть меньше или равен 0", nameof(value));
+                    throw new ArgumentException("Угол между двумя сторонами треугольника не может быть меньше или равен 0 или быть больше 180", nameof(value));
                 }
 
-                value = angle;
+                value = _angle;
                 CalculateC();
             }
         }
 
         public double CalculatePerimeter()
         {
-            double p = (sideA + sideB + sideC);
+            double p = (_sideA + _sideB + _sideC);
             return p;
         }
 
         public double CalculateArea()
         {
-            double s = ((sideA * sideB * Math.Sin(angle)) / 2);
+            double s = ((_sideA * _sideB * Math.Sin(_angle)) / 2);
             return s;
         }
 
         public void CalculateC()
         {
-            sideC = Math.Sqrt(Math.Pow(sideB, 2) + Math.Pow(sideA, 2) - 2 * sideB * sideA * Math.Cos(angle));
+            _sideC = Math.Sqrt(Math.Pow(_sideB, 2) + Math.Pow(_sideA, 2) - 2 * _sideB * _sideA * Math.Cos(_angle));
         }
 
         public bool IsRightTriangle()
         {
-            return (sideA * sideA + sideB * sideB == sideC * sideC || sideA * sideA + sideC * sideC == sideB * sideB ||sideB * sideB + sideC * sideC == sideA * sideA);                    
+            return (_sideA * _sideA + _sideB * _sideB == _sideC * _sideC || _sideA * _sideA + _sideC * _sideC == _sideB * _sideB ||_sideB * _sideB + _sideC * _sideC == _sideA * _sideA);                    
         }
     }
 }
