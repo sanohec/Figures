@@ -8,18 +8,11 @@ namespace Figures
 {
     class Circle : IFigure
     {
-        private string name = "";
         private double radius;
 
         public Circle(double r)
         {
-
             R = r;
-        }
-
-        public Circle(string n, double r) : this(r)
-        {
-            name = n;
         }
 
         public double R

@@ -8,7 +8,6 @@ namespace Figures
 {
     class Rectangle : IFigure
     {
-        public string name = "";
         private double sideA;
         private double sideB;
 
@@ -16,12 +15,6 @@ namespace Figures
         {
             A = a;
             B = b;
-        }
-
-
-        public Rectangle(string n, double a, double b) : this(a, b)
-        {
-            name = n;
         }
 
         public double A

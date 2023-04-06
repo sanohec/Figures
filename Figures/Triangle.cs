@@ -8,7 +8,6 @@ namespace Figures
 {
     class Triangle : IFigure
     {
-        public string name = "";
         private double sideA;
         private double sideB;
         private double sideC;
@@ -21,10 +20,6 @@ namespace Figures
             Angle = an;
         }
 
-        public Triangle(string n, double a, double b, int an) : this(a, b, an)
-        {
-            name = n;
-        }
 
         public double A
         {
